@@ -10,7 +10,8 @@ module.exports = function (app) {
   const options = {
     name: 'messages',
     Model,
-    paginate
+    paginate,
+    events: ['myEvent']
   };
 
   // Initialize our service with any options it requires

@@ -4,6 +4,8 @@ const processMessage = require('../../hooks/process-message');
 
 const populateUser = require('../../hooks/populate-user');
 
+const sendEvent = require('../../hooks/send-event');
+
 module.exports = {
   before: {
     all: [authenticate('jwt')],
@@ -19,7 +21,7 @@ module.exports = {
     all: [populateUser()],
     find: [],
     get: [],
-    create: [],
+    create: [sendEvent()],
     update: [],
     patch: [],
     remove: []
